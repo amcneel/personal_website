@@ -1,0 +1,95 @@
+$backgroundColor: #141414;
+$accent: #00FFD8;
+@font-face{
+	font-family: textFont;
+	src: url('./webfont/GTPressuraMono.woff2');
+}
+
+body{
+	font-family: textFont;
+	margin: 0px;
+	overflow: hidden;
+	background-color: $backgroundColor !important;
+}
+#initial{
+	width: 100%;
+	z-index: 1000;
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+	/*transform: translate(-50%, -50%);*/
+	color: white;
+	text-align: left;
+	font-size: 25px;
+	font-family: textFont;
+	/*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
+	#initialTyped{
+		color: white;
+		font-family: textFont;
+		font-size: 20px;
+		display: inline;
+		/*text-shadow: -.8px 0 $accent, 0 .8px $accent, .8px 0 $accent, 0 -.8px $accent;*/
+	}
+}
+
+#menuContainer{
+	width: 100%;
+	position: absolute;
+	background-color: transparent;
+	left: 10px;
+	top: 50%;
+	transform: translate(0%, -50%);
+
+	ul{
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+	
+	.menuItem{
+		width: 100%;
+		font-size: 35px;
+		margin-top: 10px;
+		svg{
+			stroke-opacity: 0;
+			width: 100%;
+			height: 50px;
+			text{
+				font-size: 35px;
+				font-family: textFont;
+				/*font-weight: '10';*/
+				fill: white;
+				stroke: $backgroundColor;
+				dominant-baseline: auto;
+				baseline-shift: 15px;
+				padding-bottom: 5px;
+			}
+			text:hover{
+				cursor: pointer;
+				fill: $accent;
+			}
+		}
+		svg:hover{
+			cursor: pointer;
+		}
+
+	}
+}
+
+@keyframes blink{
+	0%{opacity: 1}
+	50%{opacity: 0}
+	100%{opacity: 1}
+}
+
+.typed-cursor{
+	opacity: 1;
+	-webkit-animation: blink 1s infinite;
+	-moz-animation: blink 1s infinite;
+    animation: blink 1s infinite;
+}
+
+#myCanvas{
+	/*visibility: hidden;*/
+}
+
